@@ -32,4 +32,58 @@ The file follows the following format:
 See the file script for an example of the file format
 """
 def parse_file( fname, points, transform, screen, color ):
-    pass
+    f = open (fname, "r")
+    commands = f.split ("\n")
+    i = 0
+    while (i + 1 < len (commands)):
+        line = commands[i]
+        if line != "quit":
+            if line == "line":
+                cors = commands[i + 1].split (" ")
+                add_edge (points, int (cors[0]), int (cors[1]), int (cors[2]), int (cors[3]), int (cors[4]), int (cors[5]))
+                i += 2
+
+            elif line == "ident":
+                ident (tranform)
+                i += 1
+
+            elif line == "scale":
+                params = commands[i + 1].split (" ")
+                s = make_scale (int (params[0]), int (params[1]), int(params[2]))
+                matrix_mult (s, transform)
+                i += 2
+
+            elif line == "translate":
+                params = commands[i + 1].split (" ")
+                t = make_translate (int (params[0]), int (params[1]), int(params[2]))
+                matrix_mult (t, transform)
+                i += 2
+
+            elif line == "rotate":
+                params = commands[i + 1].split (" ")
+                if (params[0] == "x"):
+                    r = make_rotX (int (params[1]))
+                    matrix_mult (r, transform)
+
+                elif (params[0] == "y"):
+                    r = make_rotY (int (params[1]))
+                    matrix_mult (r, transform)
+
+                elif (params[0] == "z"):
+                    r = make_rotZ (int (params[1]))
+                    matrix_mult (r, transform)
+                i += 2
+
+            elif line == "apply":
+                matrix_mult (transform, points)
+                i += 1
+
+            elif line == "display":
+                clear_screen (screen)
+                draw_lines (points, screen, color)
+                display (screen)
+                i += 1
+
+            elif line == "save":
+                save_ppm (screen, "pic.png")
+                i += 1
