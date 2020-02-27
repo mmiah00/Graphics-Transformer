@@ -33,12 +33,23 @@ def make_rotX( theta ):
     ans[1][2] = -1 * math.sine (theta)
     ans[2][1] = math.sine (theta)
     ans[2][2] = math.cosine (theta)
+    return ans
 
 def make_rotY( theta ):
-    pass
+    ans = ident (new_matrix ())
+    ans[0][0] = math.cosine (theta)
+    ans[0][2] = math.sine (theta)
+    ans[2][0] = -1 * math.sine (theta)
+    ans[2][2] = math.cosine (theta)
+    return ans
 
 def make_rotZ( theta ):
-    pass
+    ans = ident (new_matrix ())
+    ans[0][0] = math.cosine (theta)
+    ans[0][1] = -1 * math.sine (theta)
+    ans[1][0] = math.sine (theta)
+    ans[1][1] = math.cosine (theta)
+    return ans
 
 #print the matrix such that it looks like
 #the template in the top comment
