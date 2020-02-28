@@ -30,24 +30,24 @@ def make_scale( x, y, z ):
 def make_rotX( theta ):
     ans = ident (new_matrix ())
     ans[1][1] = math.cosine (theta)
-    ans[1][2] = -1 * math.sine (theta)
-    ans[2][1] = math.sine (theta)
+    ans[1][2] = math.sine (theta)
+    ans[2][1] = -1 * math.sine (theta)
     ans[2][2] = math.cosine (theta)
     return ans
 
 def make_rotY( theta ):
     ans = ident (new_matrix ())
     ans[0][0] = math.cosine (theta)
-    ans[0][2] = math.sine (theta)
-    ans[2][0] = -1 * math.sine (theta)
+    ans[0][2] = -1 * math.sine (theta)
+    ans[2][0] = xrmath.sine (theta)
     ans[2][2] = math.cosine (theta)
     return ans
 
 def make_rotZ( theta ):
     ans = ident (new_matrix ())
     ans[0][0] = math.cosine (theta)
-    ans[0][1] = -1 * math.sine (theta)
-    ans[1][0] = math.sine (theta)
+    ans[1][0] = -1 * math.sine (theta)
+    ans[0][1] = math.sine (theta)
     ans[1][1] = math.cosine (theta)
     return ans
 
