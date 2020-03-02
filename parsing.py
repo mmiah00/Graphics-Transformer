@@ -65,7 +65,6 @@ def parse_file( fname, points, transform, screen, color ):
 
             elif line == "move":
                 params = commands[i + 1].split (" ")
-                print (params)
                 t = make_translate (int (params[0]), int (params[1]), int(params[2]))
                 matrix_mult (t, transform)
                 print ("done")
