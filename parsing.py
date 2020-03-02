@@ -52,7 +52,7 @@ def parse_file( fname, points, transform, screen, color ):
                 i += 2
 
             elif line == "ident":
-                ident (tranform)
+                ident (transform)
                 print ("done")
                 i += 1
 
