@@ -10,7 +10,7 @@ z0  z1  ... zn
 import math
 
 def make_translate( x, y, z ):
-    ans = new_matrix
+    ans = new_matrix()
     ident (ans)
     params = [x,y,z]
     ans[0][3] = x
