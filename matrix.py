@@ -13,7 +13,8 @@ def make_translate( x, y, z ):
     ans = ident (new_matrix ())
     params = [x,y,z]
     for i in range (len (params)):
-        ans [i][3] = params[i]
+        num = params[i]
+        ans [i][3] = num
     return ans
 
 def make_scale( x, y, z ):
