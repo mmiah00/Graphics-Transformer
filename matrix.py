@@ -41,7 +41,7 @@ def make_rotY( theta ):
     ident (ans)
     ans[0][0] = math.cos (theta)
     ans[0][2] = -1 * math.sin (theta)
-    ans[2][0] = xrmath.sin (theta)
+    ans[2][0] = math.sin (theta)
     ans[2][2] = math.cos (theta)
     return ans
 
