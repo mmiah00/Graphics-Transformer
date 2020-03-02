@@ -11,7 +11,7 @@ import math
 
 def make_translate( x, y, z ):
     ans = new_matrix
-    indent (ans)
+    ident (ans)
     params = [x,y,z]
     ans[0][3] = x
     ans[1][3] = y
