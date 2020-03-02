@@ -11,10 +11,12 @@ import math
 
 def make_translate( x, y, z ):
     ans = ident (new_matrix ())
-    params = [x,y,z]
-    for i in range (len (params)):
-        num = params[i]
-        ans [i][3] = num
+    ans[0][3] = x
+    ans[1][3] = y
+    ans[2][3] = z 
+    # params = [x,y,z]
+    # for i in range (len (params)):
+    #     ans [i][3] = params[i]
     return ans
 
 def make_scale( x, y, z ):
