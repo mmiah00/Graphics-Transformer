@@ -10,11 +10,12 @@ z0  z1  ... zn
 import math
 
 def make_translate( x, y, z ):
-    ans = ident (new_matrix ())
+    ans = new_matrix
+    indent (ans)
     params = [x,y,z]
     ans[0][3] = x
     ans[1][3] = y
-    ans[2][3] = z 
+    ans[2][3] = z
 
     # for i in range (len (params)):
     #     ans [i][3] = params[i]
