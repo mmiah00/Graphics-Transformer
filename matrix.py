@@ -28,27 +28,30 @@ def make_scale( x, y, z ):
     # ans[3][3] = 1
 
 def make_rotX( theta ):
-    ans = ident (new_matrix ())
-    ans[1][1] = math.cosine (theta)
-    ans[1][2] = math.sine (theta)
-    ans[2][1] = -1 * math.sine (theta)
-    ans[2][2] = math.cosine (theta)
+    ans = new_matrix ()
+    ident (ans)
+    ans[1][1] = math.cos (theta)
+    ans[1][2] = math.sin (theta)
+    ans[2][1] = -1 * math.sin (theta)
+    ans[2][2] = math.cos (theta)
     return ans
 
 def make_rotY( theta ):
-    ans = ident (new_matrix ())
-    ans[0][0] = math.cosine (theta)
-    ans[0][2] = -1 * math.sine (theta)
-    ans[2][0] = xrmath.sine (theta)
-    ans[2][2] = math.cosine (theta)
+    ans = new_matrix ()
+    ident (ans)
+    ans[0][0] = math.cos (theta)
+    ans[0][2] = -1 * math.sin (theta)
+    ans[2][0] = xrmath.sin (theta)
+    ans[2][2] = math.cos (theta)
     return ans
 
 def make_rotZ( theta ):
-    ans = ident (new_matrix ())
-    ans[0][0] = math.cosine (theta)
-    ans[1][0] = -1 * math.sine (theta)
-    ans[0][1] = math.sine (theta)
-    ans[1][1] = math.cosine (theta)
+    ans = new_matrix ()
+    ident (ans)
+    ans[0][0] = math.cos (theta)
+    ans[1][0] = -1 * math.sin (theta)
+    ans[0][1] = math.sin (theta)
+    ans[1][1] = math.cos (theta)
     return ans
 
 #print the matrix such that it looks like
@@ -95,3 +98,12 @@ def new_matrix(rows = 4, cols = 4):
         for r in range( rows ):
             m[c].append( 0 )
     return m
+#
+# edges = [[3, 4, 0, 1],
+#          [2, 7, 2, 1],
+#          [1, 8, 9, 2],
+#          [9, 1, 3, 7],
+#          [8, 9, 10, 11]]
+#
+# matrix_mult (make_rotX (30), edges)
+# print_matrix (edges)

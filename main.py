@@ -1,6 +1,6 @@
 from display import *
 from draw import *
-from parser import *
+from parsing import *
 from matrix import *
 
 screen = new_screen()
@@ -9,3 +9,4 @@ edges = []
 transform = new_matrix()
 
 parse_file( 'script', edges, transform, screen, color )
+#parse_file( 'myscript', edges, transform, screen, color )

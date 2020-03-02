@@ -1,0 +1,57 @@
+line
+240 0 5 260 0 5
+line
+260 0 5 260 95 5
+line
+240 0 5 240 95 5
+line
+275 95 5 250 100 5
+line
+225 95 5 250 100 5
+line
+275 95 5 300 75 5
+line
+225 95 5 200 75 5
+line
+300 75 5 275 125 5
+line
+200 75 5 225 125 5
+line
+275 125 5 325 150 5
+line
+225 125 5 175 150 5
+line
+325 150 5 275 150 5
+line
+175 150 5 225 150 5
+line
+275 150 5 250 200 5
+line
+225 150 5 250 200 5
+display
+ident
+scale
+5 5 5
+apply
+display
+ident
+move
+100 100 0
+apply
+display
+ident
+rotate
+z 45
+rotate
+x 20
+rotate
+y 20
+apply
+display
+ident
+rotate
+y 20
+apply
+display
+save
+pic.png
