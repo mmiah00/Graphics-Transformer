@@ -1,3 +1,4 @@
+
 """
 A matrix will be an N sized list of 4 element lists.
 Each individual list will represent an [x, y, z, 1] point.
@@ -13,9 +14,9 @@ def make_translate( x, y, z ):
     ans = new_matrix()
     ident (ans)
     params = [x,y,z]
-    ans[0][3] = x
-    ans[1][3] = y
-    ans[2][3] = z
+    ans[3][0] = x
+    ans[3][1] = y
+    ans[3][2] = z
 
     # for i in range (len (params)):
     #     ans [i][3] = params[i]
@@ -33,6 +34,8 @@ def make_scale( x, y, z ):
     # ans[3][3] = 1
 
 def make_rotX( theta ):
+    theta = math.radians(float(theta))
+
     ans = new_matrix ()
     ident (ans)
     ans[1][1] = math.cos (theta)
@@ -42,6 +45,7 @@ def make_rotX( theta ):
     return ans
 
 def make_rotY( theta ):
+    theta = math.radians(float(theta))
     ans = new_matrix ()
     ident (ans)
     ans[0][0] = math.cos (theta)
@@ -51,6 +55,7 @@ def make_rotY( theta ):
     return ans
 
 def make_rotZ( theta ):
+    theta = math.radians(float(theta))
     ans = new_matrix ()
     ident (ans)
     ans[0][0] = math.cos (theta)
