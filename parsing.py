@@ -92,14 +92,17 @@ def parse_file( fname, points, transform, screen, color ):
                 i += 1
 
             elif line == "display":
-                clear_screen (screen)
-                draw_lines (points, screen, color)
-                display (screen)
+                clear_screen(screen)
+                draw_lines(points, screen, color)
+                display(screen)
                 print ("done")
                 i += 1
 
             elif line == "save":
-                save_ppm (screen, "pic.png")
+                display(screen)
+                save_ppm(screen, 'binary.ppm')
+                save_ppm_ascii(screen, 'ascii.ppm')
+                save_extension(screen, name)
                 print ("done")
                 i += 1
         else:
