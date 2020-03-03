@@ -1,5 +1,3 @@
-
-
 from display import *
 from matrix import *
 from draw import *
@@ -53,21 +51,21 @@ def parse_file( fname, points, transform, screen, color ):
 
             elif line == "ident":
                 ident (transform)
-                print ("done")
+                print ("INDENT: done")
                 i += 1
 
             elif line == "scale":
                 params = commands[i + 1].split (" ")
                 s = make_scale (int (params[0]), int (params[1]), int(params[2]))
                 matrix_mult (s, transform)
-                print ("done")
+                print ("SCALE: done")
                 i += 2
 
             elif line == "move":
                 params = commands[i + 1].split (" ")
                 t = make_translate (int (params[0]), int (params[1]), int(params[2]))
                 matrix_mult (t, transform)
-                print ("done")
+                print ("MOVE: done")
                 i += 2
 
             elif line == "rotate":
@@ -83,19 +81,19 @@ def parse_file( fname, points, transform, screen, color ):
                 elif (params[0] == "z"):
                     r = make_rotZ (int (params[1]))
                     matrix_mult (r, transform)
-                print ("done")
+                print ("ROTATE: done")
                 i += 2
 
             elif line == "apply":
                 matrix_mult (transform, points)
-                print ("done")
+                print ("APPLY: done")
                 i += 1
 
             elif line == "display":
                 clear_screen(screen)
                 draw_lines(points, screen, color)
                 display(screen)
-                print ("done")
+                print ("DISPLAY: done")
                 i += 1
 
             elif line == "save":
@@ -103,7 +101,7 @@ def parse_file( fname, points, transform, screen, color ):
                 save_ppm(screen, 'binary.ppm')
                 save_ppm_ascii(screen, 'ascii.ppm')
                 save_extension(screen, name)
-                print ("done")
+                print ("SAVE: done")
                 i += 1
         else:
             file.close()
