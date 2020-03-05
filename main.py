@@ -18,6 +18,11 @@ draw_road ()
 def draw_legs ():
     x = 75
     while (x < 500):
+        script.write ("line\n" + str (x) + " 250 0 " + str (x) + "0 0\n")
+        script.write ("line\n" + str (x) + " 0 0 " + str (x) + "40 0 0\n")
+        script.write ("line\n" + str (x) + " 40 0 0 " + str (x) + "40 250 0\n")
+        x += 300
+
         script.write ("line\n250 0 " + str (x) + " 0 0\n")
         script.write ("line\n0 0 " + str (x) + " 40 0 0\n")
         script.write ("line\n" + str (x + 40) + " 0 0 " + str (x + 40) +" 250 0\n")
