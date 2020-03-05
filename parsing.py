@@ -87,6 +87,10 @@ def parse_file( fname, points, transform, screen, color ):
 
             elif line == "apply":
                 matrix_mult (transform, points)
+                for r in range (len (points)):
+                    for c in range (len (points[r])):
+                        num = int (points[r][c])
+                        points[r][c] = num
                 print ("APPLY: done")
                 i += 1
 
