@@ -105,7 +105,7 @@ def parse_file( fname, points, transform, screen, color ):
                 display(screen)
                 save_ppm(screen, 'binary.ppm')
                 save_ppm_ascii(screen, 'ascii.ppm')
-                save_extension(screen, name)
+                save_extension(screen, "pic.png")
                 print ("SAVE: done")
                 i += 1
         else:
